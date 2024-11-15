@@ -1,2 +1,3 @@
 # frontend_grupo4
-Repoitório para o frot-end do projeto do processo trainee da CJR. Grupo 4
+Repositório para o front-end do grupo 4 do PT da CJR 2024.2
+
