@@ -63,6 +63,9 @@ h1{
     text-align: center;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
+    position: relative;
+    left: 171px;
+    top: 231;
 }
 .professores img{
     width: 185px;
