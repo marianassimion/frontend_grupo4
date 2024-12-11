@@ -1,3 +1,11 @@
+*{
+    background-color: #cae1ff;
+}
+:root{
+    --background: #a4fed3;
+    --backgroundp: #ffffff;
+    --backgroundb: #a32f2f;
+}
 header{
     display: flex;
     justify-content: space-between;
@@ -7,20 +15,21 @@ header{
     gap: 20px;
 
 }
-
-:root{
-    --background: #A4FED3;
+.logo{
+    background-color: #a4fed3;
 }
-
 .logo img{
     height: 2rem;
     width: 3.5rem;
 }
+.icone{
+    background-color: #a4fed3;
+}
 .icone img{
     height: 2rem;
     width: 2rem;
+    background-color: #a4fed3;
 }
-
 .icone{
     margin-left: 10px;
     font-size: 1.5rem;
@@ -28,4 +37,68 @@ header{
 .icone .Notificacao{
     margin-left: 20px;
 
+}
+h1{
+    font-family: Querial;
+    font-family: Questrial;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 37.08px;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+.modulo{
+    display: flex;
+    width: 236px;
+    height: 281px;
+    top: 212px;
+    left: 450px;
+    gap: 80px;
+    border-radius: 10px 0px 0px 0px;
+    opacity: 0px;
+
+}
+.professores{
+    background-color: #ffffff;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+.professores img{
+    width: 185px;
+    height: 185px;
+    border-radius: 30%;
+}
+.professores h2 {
+    background-color: #ffffff;
+    font-family: Questrial;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 23.69px;
+}
+.professores h3{
+    font-family: Questrial;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 18.54px;
+    background-color: #ffffff;
+    color: #B2B0B0;
+
+}
+.button{
+    width: 154px;
+    height: 45px;
+    top: 584px;
+    left: 1137px;
+    gap: 0px;
+    opacity: 0px;
+    background-color: #0011ff;
+    color: #ffffff;
+}
+.cabecalho{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 20px;
 }
