@@ -1,16 +1,10 @@
+import Header from "../Header/Header";
+
 export default function Home() {
     return (
       <main >
-        <div className="w-screen h-screen">
-          <header className='bg-green-100 flex flex-row'>
-            <img src="images/Unb.png" alt="Logo da Unb" className="h-10 w-16 m-2"  />
-            <div className="ml-auto">
-            <button><img src="images/notification.png" alt="Notificação" className="h-8 w-8 m-2"/></button>
-            <button><img src="images/morty.png" alt="Perfil" className="h-8 w-8 m-2 rounded-full"/></button>
-            <button><img src="images/exit.png" alt="Sair" className="h-8 w-8 m-2"/></button>
-            </div>
-            
-          </header>
+        <Header/>
+        <div className="max-w-ml flex flex-col items-center">
           <div className="flex flex-col ">
           <div className="mt-10 flex flex-row gap-2">
             <h1 className="font-bold">Novos Professores</h1>
@@ -19,8 +13,8 @@ export default function Home() {
           <div className="flex flex-col items-center">
             <div  className="flex flex-row gap-10 ">
               {[...Array(4)].map((_, index) => (
-                <div key={index} className="gap-1 h-[300px] w-40 rounded-lg border border-black bg-white flex flex-col items-center">
-                  <img src="images/undefined.png" alt="perfil" />
+                <div key={index} className="gap-1 h-[250px] w-40 rounded-lg border border-black bg-white flex flex-col items-center">
+                  <img src="images/undefined.png" alt="perfil"/>
                   <h2 className='text-2xl font-bold'>Nome</h2>
                   <h3>Disciplina</h3>
                 </div>
@@ -28,6 +22,7 @@ export default function Home() {
             </div>
           </div>
           </div>
+          <div>
           <div className="mt-10 flex flex-row items-center"> 
             <h1 className="font-bold text 3x1">Todos os Professores</h1>
             <div className="ml-auto flex flex-row gap-2">
@@ -38,14 +33,16 @@ export default function Home() {
             <div className="flex flex-col items-center">
             <div  className="flex flex-row gap-10 items-center">
                 {[...Array(4)].map((_, index) => (
-              <div key={index} className="gap-1 h-[300px] w-40 rounded-lg border border-black flex flex-col bg-white items-center">
-                    <img src="images/undefined.png" alt="perfil" />
+              <div key={index} className="gap-1 h-[250px] w-40 rounded-lg border border-black flex flex-col bg-white items-center">
+                    <img src="images/undefined.png" alt="perfil"/>
                     <h2 className='text-2xl font-bold'>Nome</h2>
                     <h3>Disciplina</h3>
                   </div>
                 ))}
               </div>
             </div>
+          </div>
+          
         </div>
       </main>
     );
