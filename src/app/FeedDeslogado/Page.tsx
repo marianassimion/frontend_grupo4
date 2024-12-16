@@ -1,9 +1,27 @@
-import Header from "../Header/HeaderLogado";
+import HeaderDeslogado from "../Header/HeaderDeslogado";
+import axios from "axios";
 
-export default function Home() {
-    return (
+const getPosts = async () =>{
+  const response = await axios.get<
+  [
+    {
+      id: string;
+      userID: number;
+      title: string;
+      body: string;
+    }
+  ]>('https://jsonplaceholder.typicode.com/posts');
+  return response.data;
+}
+
+export default async function Axios() {
+  const posts = await getPosts();
+  return (
       <main >
-        <Header/>
+        <HeaderDeslogado/>
+        {posts.map((post) => (
+          <p key = {post.id}>{post.title}</p>
+        ))}
         <div className="max-w-ml flex flex-col items-center">
           <div className="flex flex-col ">
           <div className="mt-10 flex flex-row gap-2">
@@ -26,7 +44,6 @@ export default function Home() {
           <div className="mt-10 flex flex-row items-center"> 
             <h1 className="font-bold text 3x1">Todos os Professores</h1>
             <div className="ml-auto flex flex-row gap-2">
-              <button className="bg-indigo-600 text-white p-2 rounded-lg hover:scale-110">Novas publicação</button>
               <button className="bg-indigo-600 text-white p-2 rounded-lg hover:scale-110">Ordenar</button>
             </div>
           </div>
