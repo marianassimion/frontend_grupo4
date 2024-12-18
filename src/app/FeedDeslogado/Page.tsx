@@ -19,6 +19,7 @@ export default async function Axios() {
   return (
       <main >
         <HeaderDeslogado/>
+
         {posts.map((post) => (
           <p key = {post.id}>{post.title}</p>
         ))}

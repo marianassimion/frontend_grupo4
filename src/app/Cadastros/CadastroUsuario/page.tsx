@@ -1,9 +1,12 @@
+"use client"
 // Docs {@link https://tailwindcss.com/docs/text-color}
+import { useRouter } from 'next/navigation';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import Image from 'next/image';
 
-export function App() {
-   const navigate = useNavigate();
+
+export default function CadastroUsuario() {
+   const navigate = useRouter();
   return (
     <div className='flex items-center justify-center min-h-screen bg-black'>
       {/* Container principal */}
@@ -11,11 +14,10 @@ export function App() {
         {/* Metade com a imagem */}
         <div
           className='hidden md:block md:w-1/2 bg-cover bg-center'
-          style={{
-            backgroundImage:
-              "url('https://source.unsplash.com/featured/?classroom,education')",
-          }}
-        ></div>
+          
+        >
+        <Image src="/images/login.png" alt="Foto de login" width={40} height={40}></Image>
+        </div>
 
         {/* Metade com o formulário */}
         <div className='w-full md:w-1/2 bg-gray-100 flex flex-col justify-center p-10'>
@@ -66,7 +68,7 @@ export function App() {
             <div className='flex justify-center space-x-4'>
               <button
                 type='button'
-                onClick={() => navigate('/')}
+                onClick={() => navigate.push('/')}
                 className='px-6 py-2 bg-green-300 text-black font-semibold rounded-md hover:bg-green-400 transition'
               >
                 Criar Conta
