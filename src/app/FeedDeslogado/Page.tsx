@@ -14,19 +14,23 @@ const getPosts = async () =>{
   return response.data;
 }
 
-export default async function Axios() {
-  const posts = await getPosts();
+export default  function FeedDeslogado() {
+  const posts =  getPosts();
   return (
       <main >
         <HeaderDeslogado/>
+<<<<<<< Updated upstream
         {posts.map((post) => (
           <p key = {post.id}>{post.title}</p>
         ))}
         <div className="max-w-ml flex flex-col items-center">
+=======
+        <div className="max-w-ml flex flex-col items-center ">
+>>>>>>> Stashed changes
           <div className="flex flex-col ">
-          <div className="mt-10 flex flex-row gap-2">
-            <h1 className="font-bold">Novos Professores</h1>
-            <input type="text" placeholder="Buscar Professor(a)" className="ml-auto ml-80"/>
+          <div className="mt-10 flex flex-row gap-2  mb-2 ">
+            <h1 className="text-2xl font-bold">Novos Professores</h1>
+            <input type="text" placeholder="Buscar Professor(a)" className=' w-1/2 px-4 py-3 border border-gray-300 rounded-md text-gray-700 ml-auto ml-80'/>
           </div>
           <div className="flex flex-col items-center">
             <div  className="flex flex-row gap-10 ">
@@ -41,8 +45,8 @@ export default async function Axios() {
           </div>
           </div>
           <div>
-          <div className="mt-10 flex flex-row items-center"> 
-            <h1 className="font-bold text 3x1">Todos os Professores</h1>
+          <div className="mt-10 flex flex-row items-center  mb-2 "> 
+            <h1 className="text-2xl font-bold">Todos os professores</h1>
             <div className="ml-auto flex flex-row gap-2">
               <button className="bg-indigo-600 text-white p-2 rounded-lg hover:scale-110">Ordenar</button>
             </div>
