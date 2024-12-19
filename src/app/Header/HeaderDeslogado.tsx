@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image";
 import React from "react";
 import { useRouter } from "next/navigation";
 
@@ -12,8 +13,8 @@ const HeaderDeslogado = () => {
         router.push('/FeedDeslogado')
     };
     return (
-        <header className='bg-green-100 flex flex-row'>
-            <button onClick={Home}><img src="images/Unb.png" alt="Logo da Unb" className="h-10 w-16 m-2"  />
+        <header className='bg-secondary flex flex-row'>
+            <button onClick={Home}><Image src="/images/Unb.svg" alt="Logo da Unb"  width={64} height={40}className = "m-2"  />
             </button>
             <div className="ml-auto">
                 <button onClick={feedLogado} className="bg-indigo-600 text-white p-3 rounded-lg hover:scale-110 m-2">Login</button>
