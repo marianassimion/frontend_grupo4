@@ -1,47 +1,58 @@
+'use client'
+import { useState, useEffect } from 'react';
 import Header from "../Header/HeaderDeslogado";
 import Link from 'next/link';
+import axios from 'axios';
 
-const posts = [
-  {
-    autor: "Morty Gamer",
-    data: "19/12/2024, às 13:59",
-    texto: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nulla asperiores numquam libero, quia pariatur tenetur odio delectus fuga nihil voluptate iure corporis quisquam provident labore ducimus eaque rem optio!",
-    comentarios: 5,
-  },
-  {
-    autor: "Morty Gamer",
-    data: "19/12/2024, às 13:59",
-    texto: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nulla asperiores numquam libero, quia pariatur tenetur odio delectus fuga nihil voluptate iure corporis quisquam provident labore ducimus eaque rem optio!",
-    comentarios: 5,
-  },
-  {
-    autor: "Morty Gamer",
-    data: "19/12/2024, às 13:59",
-    texto: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nulla asperiores numquam libero, quia pariatur tenetur odio delectus fuga nihil voluptate iure corporis quisquam provident labore ducimus eaque rem optio!",
-    comentarios: 5,
-  },
-];
+// Função para buscar os posts
+const getPosts = async () => {
+  try {
+    const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
+    return response.data;
+  } catch (error) {
+    console.error("Erro ao buscar posts:", error);
+    return [];
+  }
+};
 
 const PostCard = ({ post }) => (
   <div className="rounded-2xl h-auto bg-primary place-self-center gap-4 p-4 m-2 w-11/12">
     <div className="absolute rounded-full h-12 w-12 border-t">
-      <img src="images/morty.png" alt={`Foto de perfil de ${post.autor}`} className="rounded-full" />
+      <img src="images/morty.png" alt={`Foto de perfil de ${post.author}`} className="rounded-full" />
     </div>
     <div className="pl-16">
       <div className="flex gap-4">
-        <div className="font-bold">{post.autor}</div>
-        <div className="text-gray-700">{post.data}</div>
+        <div className="font-bold">{post.author}</div>
+        <div className="text-gray-700">{post.date}</div>
       </div>
-      <div>{post.texto}</div>
+      <div>{post.body}</div>
       <div className="pt-2 flex items-center gap-2">
         <img src="images/comments.png" alt="Ícone de comentários" className="h-6 w-6" />
-        <div className="text-gray-700">{post.comentarios} comentários</div>
+        <div className="text-gray-700">{post.comments} comentários</div>
       </div>
     </div>
   </div>
 );
 
 const AlunoDeslogado = () => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const fetchedPosts = await getPosts();
+      const postsWithMetaData = fetchedPosts.map((post) => ({
+        ...post,
+        author: "Morty Gamer",
+        date: "19/12/2024, às 13:59",
+        
+        comments: 5,
+      }));
+      setPosts(postsWithMetaData);
+    };
+    
+    fetchPosts();
+  }, []);
+
   return (
     <main>
       <Header />
@@ -71,9 +82,13 @@ const AlunoDeslogado = () => {
         {/* Publicações */}
         <div className="bg-white w-3/5 place-self-center border-t border-black">
           <div className="mt-4 ml-2 mb-4 font-bold">Publicações</div>
-          {posts.map((post, index) => (
-            <PostCard key={index} post={post} />
-          ))}
+          {posts.length > 0 ? (
+            posts.map((post, index) => (
+              <PostCard key={index} post={post} />
+            ))
+          ) : (
+            <div>Carregando publicações...</div>
+          )}
         </div>
 
         {/* Rodapé */}
@@ -90,6 +105,6 @@ const AlunoDeslogado = () => {
       </div>
     </main>
   );
-}
+};
 
 export default AlunoDeslogado;
