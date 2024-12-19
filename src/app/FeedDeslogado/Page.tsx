@@ -19,14 +19,6 @@ export default  function FeedDeslogado() {
   return (
       <main >
         <HeaderDeslogado/>
-<<<<<<< Updated upstream
-        {posts.map((post) => (
-          <p key = {post.id}>{post.title}</p>
-        ))}
-        <div className="max-w-ml flex flex-col items-center">
-=======
-        <div className="max-w-ml flex flex-col items-center ">
->>>>>>> Stashed changes
           <div className="flex flex-col ">
           <div className="mt-10 flex flex-row gap-2  mb-2 ">
             <h1 className="text-2xl font-bold">Novos Professores</h1>
