@@ -9,9 +9,9 @@ const Header = () => {
     const Sair =  () => {
       router.push('/FeedDeslogado')
     };
-    const Home = () => {
-        router.push('/Feed')
-    };
+    // const Home = () => {
+    //     router.push('/Feed')
+    // };
     return (
         <header className='bg-green-100 flex flex-row'>
             <button onClick={() => setmodal(!modal)}><img src="images/Unb.png" alt="Logo da Unb" className="h-10 w-16 m-2"  />
