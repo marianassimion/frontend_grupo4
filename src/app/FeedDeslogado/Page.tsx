@@ -1,21 +1,21 @@
 import HeaderDeslogado from "../Header/HeaderDeslogado";
-import axios from "axios";
+// import axios from "axios";
 
-const getPosts = async () =>{
-  const response = await axios.get<
-  [
-    {
-      id: string;
-      userID: number;
-      title: string;
-      body: string;
-    }
-  ]>('https://jsonplaceholder.typicode.com/posts');
-  return response.data;
-}
+// const getPosts = async () =>{
+//   const response = await axios.get<
+//   [
+//     {
+//       id: string;
+//       userID: number;
+//       title: string;
+//       body: string;
+//     }
+//   ]>('https://jsonplaceholder.typicode.com/posts');
+//   return response.data;
+// }
 
 export default  function FeedDeslogado() {
-  const posts =  getPosts();
+  // const posts =  getPosts();
   return (
       <main >
         <HeaderDeslogado/>
