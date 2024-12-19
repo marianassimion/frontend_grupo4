@@ -1,4 +1,4 @@
-import FeedDeslogado from "./FeedDeslogado/page";
+import FeedDeslogado from "./FeedDeslogado/Page";
 
 export default function Home() {
   return (   

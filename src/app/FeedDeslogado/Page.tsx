@@ -55,8 +55,6 @@ export default  function FeedDeslogado() {
             </div>
             </div>
           </div>
-          
-        </div>
       </main>
     );
   }
