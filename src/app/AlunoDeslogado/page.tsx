@@ -11,11 +11,13 @@ export default function Profile() {
         <div className="absolute pl-12 pt-20">
             <div className="font-bold">Morty Gamer</div>
             <div className="flex-row">
-              <div className="flex gap-2">
+              <div className="flex gap-2 items-center">
+              <img src="images/build.png" alt="Empresa" className="w-5 h-5"/>
                 <div>Ciência da Computação</div>
                 <div>Dept. Ciência da Computação</div>
               </div>
-              <div>
+              <div className="flex gap-2 items-center">
+                <img src="images/letter.png" alt="Empresa" className="w-5 h-5"/>
                 Morty.gamer.23@cjr.org.br
                 </div>
             </div>
@@ -36,6 +38,12 @@ export default function Profile() {
                 <div className="text-gray-700">- Data/Mês/Ano, às Hora:Segundo</div>
               </div>
               <div className="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nulla asperiores numquam libero, quia pariatur tenetur odio delectus fuga nihil voluptate iure corporis quisquam provident labore ducimus eaque rem optio!</div>
+              
+              <div className="pt-2 flex items-center gap-2">
+                <img src="images/comments.png" alt="Foto de Perfil" className=" h-6 w-6"/>
+                <div className="text-gray-700">5 comentários</div>
+              </div>
+
             </div>
           </div>
 
@@ -49,7 +57,12 @@ export default function Profile() {
                 <div className="text-gray-700">- Data/Mês/Ano, às Hora:Segundo</div>
               </div>
               <div className="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nulla asperiores numquam libero, quia pariatur tenetur odio delectus fuga nihil voluptate iure corporis quisquam provident labore ducimus eaque rem optio!</div>
+              <div className="pt-2 flex items-center gap-2">
+                <img src="images/comments.png" alt="Foto de Perfil" className=" h-6 w-6"/>
+                <div className="text-gray-700">5 comentários</div>
+              </div>
             </div>
+
           </div>
     </div>
       </div>
