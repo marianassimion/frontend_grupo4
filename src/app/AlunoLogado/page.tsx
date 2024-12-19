@@ -5,7 +5,7 @@ export default function Profile() {
   return (
     <main>
       <Header/>
-      <div className=" bg-gray-300 grid grid-flow-1 ">
+      <div className="text-black bg-gray-300 grid grid-flow-1 ">
       <div className="col-span h-32 w-3/5 bg-primary place-self-center position:relative"></div>
       <div className="col-span h-44 w-3/5  bg-white place-self-center">
         <div className="absolute pl-12 pt-20">
@@ -21,18 +21,22 @@ export default function Profile() {
             </div>
         </div>
         <div className="grid place-self-end mr-8 mt-4 rounded-1/4 gap-2">
-          <button type="button" className="text-bold text-black border-2 bg-green-700 hover:border-green-700 hover:bg-white hover:text-green-700 font-medium rounded-lg px-2 p-1"> Editar Perfil </button>
-          <button type="button" className="text-black border-2 bg-red-700 hover:border-red-700 hover:bg-white hover:text-red-700 font-medium rounded-lg px-2 p-1"> Excluir Perfil </button>
+          <button type="button" className="border-2 bg-green-700 hover:border-green-700 hover:bg-white hover:text-green-700 font-bold rounded-lg px-2 p-1"> Editar Perfil </button>
+          <button type="button" className="border-2 bg-red-700 hover:border-red-700 hover:bg-white hover:text-red-700 font-bold rounded-lg px-2 p-1"> Excluir Perfil </button>
         </div>
       </div>  
       
-      <div className="absolute rounded-full h-32 w-32 left-1/4 mt-16 border-2">Foto de perfil</div>
+      <div className="absolute rounded-full h-32 w-32 left-1/4 mt-16">
+        <img src="images/morty.png" alt="Foto de Perfil" className="rounded-full"/>
+      </div>
 
       <div className="bg-white w-3/5 place-self-center border-t border-black">
-          <div className="mt-4 ml-2 mb-4 font-bold">Publicações</div>
+          <div className="text-black mt-4 ml-2 mb-4 font-bold">Publicações</div>
 
           <div className="rounded-2xl h-auto bg-primary place-self-center gap-4 p-4 m-2">
-            <div className="absolute rounded-full h-12 w-12 border-t">Foto de Perfil</div>
+            <div className="absolute rounded-full h-12 w-12 border-t">        
+                <img src="images/morty.png" alt="Foto de Perfil" className="rounded-full"/>
+            </div>
             <div className="pl-16">
               <div className="flex gap-4">
                 <div className="font-bold">Morty Gamer</div>
@@ -43,7 +47,8 @@ export default function Profile() {
           </div>
 
           <div className="rounded-2xl h-auto bg-primary place-self-center gap-4 p-4 m-2">
-            <div className="absolute rounded-full h-12 w-12 border-t">Foto de Perfil</div>
+            <div className="absolute rounded-full h-12 w-12 border-t">        <img src="images/morty.png" alt="Foto de Perfil" className="rounded-full"/>
+            </div>
             <div className="pl-16">
               <div className="flex gap-4">
                 <div className="font-bold">Morty Gamer</div>
@@ -55,7 +60,7 @@ export default function Profile() {
     </div>
       </div>
           {/* Rodape */}
-          <footer className="mt-auto py-4 bg-gray-200 text-center text-sm text-gray-600">
+          <footer className="mt-auto py-4 bg-green-100  text-center text-sm text-gray-600">
             <p>&copy; 2024 CJR. Todos os direitos reservados.</p>
             <p>
               Desenvolvido por João Frango - Todos os posts são fictícios e criados para fins de
