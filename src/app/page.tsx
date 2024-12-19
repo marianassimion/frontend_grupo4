@@ -1,9 +1,6 @@
-import Image from "next/image";
-import Axios from "./FeedDeslogado/page";
+import FeedDeslogado from "./FeedDeslogado/page";
 
 export default function Home() {
   return (   
-    <Axios></Axios>
-      
-  );
+    <FeedDeslogado/>  );
 }
