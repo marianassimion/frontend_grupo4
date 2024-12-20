@@ -47,7 +47,9 @@ export default function Home() {
           </div>
         </div>
         </div>
-          <div className="mt-10 flex flex-row items-center mb-2">
+        <div className="bg-black-600"></div>
+        <div>
+        <div className="mt-10 flex flex-row items-center mb-2">
             <h1 className="text-2xl font-bold">Todos os professores</h1>
             <div className="ml-auto flex flex-row gap-2">
               <button
@@ -93,8 +95,9 @@ export default function Home() {
                 </div>
               )}
           </div>
-          <div className="flex flex-col items-center">
-            <div className="flex flex-row gap-10 items-center">
+        </div>
+        <div className="flex flex-col items-center">
+          <div className="flex flex-row gap-10 items-center">
               {[...Array(4)].map((_, index) => (
                 <div
                   key={index}
@@ -105,11 +108,10 @@ export default function Home() {
                   <h3>Disciplina</h3>
                 </div>
               ))}
-            </div>
-          </div>
         </div>
-      </div>
-
+        </div>
+        </div>
+        </div>
       {isModalOpen && (
         <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">

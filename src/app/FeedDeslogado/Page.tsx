@@ -19,6 +19,7 @@ export default  function FeedDeslogado() {
   return (
       <main >
         <HeaderDeslogado/>
+          <div className="max-w-ml flex flex-col items-center">
           <div className="flex flex-col ">
           <div className="mt-10 flex flex-row gap-2  mb-2 ">
             <h1 className="text-2xl font-bold">Novos Professores</h1>
@@ -55,6 +56,7 @@ export default  function FeedDeslogado() {
             </div>
             </div>
           </div>
+        </div>
       </main>
     );
   }
