@@ -16,7 +16,7 @@ export default function CadastroUsuario() {
           className='hidden md:block md:w-1/2 bg-cover bg-center'
           
         >
-        <Image src="/images/login.png" alt="Foto de login" width={751} height={1000}></Image>
+        <Image src="/images/login.png" alt="Foto de login" width={751} height={900}></Image>
         </div>
 
         {/* Metade com o formulário */}
