@@ -1,7 +1,15 @@
+"use client"
+import { useState } from "react";
 import Header from "../Header/HeaderLogado";
 import Link from 'next/link';
+import Modal from "../modals/modal";
 
 export default function Profile() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
+
   return (
     <main>
       <Header />
@@ -25,13 +33,14 @@ export default function Profile() {
           <div className="grid place-self-end mr-8 mt-4 rounded-1/4 gap-2">
             <button
               type="button"
-              className="border-2 bg-green-700 hover:border-green-700 hover:bg-white hover:text-green-700 font-bold rounded-lg px-2 p-1"
+              className="border-2 bg-green-700 hover:border-green-700 hover:bg-white hover:text-green-700 font-bold rounded-lg text-gray-600 px-2 p-1"
+              onClick={handleOpenModal}
             >
               Editar Perfil
             </button>
             <button
               type="button"
-              className="border-2 bg-red-700 hover:border-red-700 hover:bg-white hover:text-red-700 font-bold rounded-lg px-2 p-1"
+              className="border-2 bg-red-700 hover:border-red-700 hover:bg-white hover:text-red-700 font-bold rounded-lg text-gray-600 px-2 p-1"
             >
               Excluir Perfil
             </button>
@@ -110,6 +119,76 @@ export default function Profile() {
           </Link>
         </p>
       </footer>
+
+      {isModalOpen && (
+        <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div className="bg-gray-100 rounded-lg text-gray-600 shadow-lg text-gray-600 p-6 w-[500px] relative">
+              <button
+                className="absolute top-4 right-4 text-black text-xl font-bold"
+                onClick={handleCloseModal}
+              >
+                &times;
+              </button>
+              <div className="flex flex-col items-center mb-4">
+                <div className="relative">
+                  <img
+                    src="images/morty.png"
+                    alt="Foto de Perfil"
+                    className="rounded-full h-24 w-24"
+                  />
+                  <div className="absolute bottom-0 right-0 bg-white rounded-full p-1 cursor-pointer">
+                    <img src="images/camera-icon.png" alt="Editar Foto" className="h-6 w-6" />
+                  </div>
+                </div>
+              </div>
+              <form className="flex flex-col gap-4">
+                <input
+                  type="text"
+                  placeholder="Nome"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-600"
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-600"
+                />
+                <input
+                  type="text"
+                  placeholder="Curso"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-600"
+                />
+                <input
+                  type="text"
+                  placeholder="Departamento"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-600"
+                />
+                <input
+                  type="password"
+                  placeholder="Senha atual"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-600"
+                />
+                <input
+                  type="password"
+                  placeholder="Nova senha"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-600"
+                />
+                <input
+                  type="password"
+                  placeholder="Confirmar nova senha"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-600"
+                />
+                <button
+                  type="submit"
+                  className="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 mt-4"
+                >
+                  Salvar
+                </button>
+              </form>
+            </div>
+          </div>
+        </Modal>
+      )}
     </main>
   );
 }
