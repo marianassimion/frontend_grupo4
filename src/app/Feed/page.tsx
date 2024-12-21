@@ -47,6 +47,7 @@ export default function Home() {
           </div>
         </div>
         </div>
+        
         <div>
         <div className="mt-10 flex flex-row items-center mb-2">
             <h1 className="text-2xl font-bold">Todos os professores</h1>
