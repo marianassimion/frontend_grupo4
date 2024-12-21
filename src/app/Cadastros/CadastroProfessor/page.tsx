@@ -12,7 +12,7 @@ export default function CadastroProfessor() {
       <div className='flex w-full max-w-6xl h-screen bg-white'>
         {/* Metade com a imagem */}
         <div className='hidden md:block md:w-1/2 bg-cover bg-center'> 
-        <Image src="/images/login.png" alt="Foto de login" width={40} height={40}></Image>
+        <Image src="/images/login.png" alt="Foto de login" width={751} height={900}></Image>
         </div>
 
         {/* Metade com o formulário */}

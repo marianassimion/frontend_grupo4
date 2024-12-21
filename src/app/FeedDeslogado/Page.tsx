@@ -19,6 +19,7 @@ export default  function FeedDeslogado() {
   return (
       <main >
         <HeaderDeslogado/>
+          <div className="max-w-ml flex flex-col items-center">
           <div className="flex flex-col ">
           <div className="mt-10 flex flex-row gap-2  mb-2 ">
             <h1 className="text-2xl font-bold">Novos Professores</h1>
@@ -37,7 +38,7 @@ export default  function FeedDeslogado() {
           </div>
           </div>
           <div>
-          <div className="mt-10 flex flex-row items-center  mb-2 "> 
+          <div className=" mt-10 flex flex-row items-center  mb-2 "> 
             <h1 className="text-2xl font-bold">Todos os professores</h1>
             <div className="ml-auto flex flex-row gap-2">
               <button className="bg-indigo-600 text-white p-2 rounded-lg hover:scale-110">Ordenar</button>
@@ -55,6 +56,7 @@ export default  function FeedDeslogado() {
             </div>
             </div>
           </div>
+        </div>
       </main>
     );
   }
