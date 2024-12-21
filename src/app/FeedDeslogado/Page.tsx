@@ -37,9 +37,8 @@ export default  function FeedDeslogado() {
             </div>
           </div>
           </div>
-          <div className="bg-black h-1 w-3/4 mt-10 mb-10"></div>
           <div>
-          <div className="flex flex-row items-center  mb-2 "> 
+          <div className=" mt-10 flex flex-row items-center  mb-2 "> 
             <h1 className="text-2xl font-bold">Todos os professores</h1>
             <div className="ml-auto flex flex-row gap-2">
               <button className="bg-indigo-600 text-white p-2 rounded-lg hover:scale-110">Ordenar</button>
