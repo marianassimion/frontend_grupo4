@@ -15,12 +15,18 @@ export const getUsers = async () => {
   }
 };
 
-export const createUser = async (user: { name: string; email: string }) => {
+export const createUser = async (user: { 
+  nome: string; 
+  email: string; 
+  senha: string; 
+  curso: string; 
+  departamento: string; 
+}) => {
   try {
-    const response = await api.post('/user', user);
+    const response = await api.post('/user', user); // Faz a requisição POST para o endpoint do back-end
     return response.data;
   } catch (error) {
-    console.error("Erro ao criar usuário:", error);
+    console.error('Erro ao criar usuário:', error);
     throw error;
   }
 };
