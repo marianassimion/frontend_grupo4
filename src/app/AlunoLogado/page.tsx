@@ -1,55 +1,61 @@
-"use client"
-import { useState } from "react";
+"use client";
+import { useState, useEffect } from "react";
 import Header from "../Header/HeaderLogado";
-import Link from 'next/link';
+import Link from "next/link";
 import Modal from "../modals/modal";
-
-export default function Profile() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleOpenModal = () => setIsModalOpen(true);
-  const handleCloseModal = () => setIsModalOpen(false);
-
-
-//'use client'
-//import { useState, useEffect } from 'react';
-//import Header from "../Header/HeaderLogado";
-//import Link from 'next/link';
-//import axios from 'axios';
+import axios from "axios";
 
 // Função para buscar os posts
-//const getPosts = async () => {
-  //try {
-//    const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
-//    return response.data;
-//  } catch (error) {
-//    console.error("Erro ao buscar posts:", error);
-//    return [];
-//  }
-//};
+const getPosts = async () => {
+  try {
+    const response = await axios.get(
+      "https://jsonplaceholder.typicode.com/posts"
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Erro ao buscar posts:", error);
+    return [];
+  }
+};
 
 // Componente para renderizar o post
-//const PostCard = ({ post }) => (
-//  <div className="rounded-2xl h-auto bg-primary place-self-center gap-4 p-4 m-2 w-11/12">
-//    <div className="absolute rounded-full h-12 w-12 border-t">
-//      <img src="images/morty.png" alt={`Foto de perfil de ${post.autor}`} className="rounded-full" />
-//    </div>
-//    <div className="pl-16">
-//      <div className="flex gap-4">
-//        <div className="font-bold">{post.autor}</div>
-//        <div className="text-gray-700">{post.data}</div>
-//      </div>
-//      <div>{post.texto}</div>
-//
-//      <div className="place-content-between pt-2 flex gap-4"> 
-<!--         <div className="flex gap-2"> -->
-<!--           <img src="images/comments.png" alt="Ícone de comentários" className="h-6 w-6" />
-          <div className="text-gray-700">{post.comments} comentários</div>
+const PostCard = ({ post }) => (
+  <div className="rounded-2xl h-auto bg-primary place-self-center gap-4 p-4 m-2 w-11/12">
+    <div className="absolute rounded-full h-12 w-12 border-t">
+      <img
+        src="images/morty.png"
+        alt={`Foto de perfil de ${post.autor}`}
+        className="rounded-full"
+      />
+    </div>
+    <div className="pl-16">
+      <div className="flex gap-4">
+        <div className="font-bold">{post.autor}</div>
+        <div className="text-gray-700">{post.data}</div>
+      </div>
+      <div>{post.texto}</div>
+
+      <div className="place-content-between pt-2 flex gap-4">
+        <div className="flex gap-2">
+          <img
+            src="images/comments.png"
+            alt="Ícone de comentários"
+            className="h-6 w-6"
+          />
+          <div className="text-gray-700">{post.comentarios} comentários</div>
         </div>
-          <div className="flex gap-2">
-          <img src="images/edit.png" alt="Editar Postagem" className="h-7 w-7 items-end" />
-          <img src="images/trash.png" alt="Excluir Postagem" className="h-7 w-7 items-end" />
-          </div>
+        <div className="flex gap-2">
+          <img
+            src="images/edit.png"
+            alt="Editar Postagem"
+            className="h-7 w-7 items-end"
+          />
+          <img
+            src="images/trash.png"
+            alt="Excluir Postagem"
+            className="h-7 w-7 items-end"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -57,6 +63,10 @@ export default function Profile() {
 
 const AlunoLogado = () => {
   const [posts, setPosts] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -70,28 +80,35 @@ const AlunoLogado = () => {
       }));
       setPosts(postsWithMetaData);
     };
-    
-    fetchPosts();
-  }, []); -->
 
+    fetchPosts();
+  }, []);
 
   return (
     <main>
       <Header />
       <div className="text-black bg-gray-300 grid grid-flow-1">
         {/* Informações do Aluno */}
-        <div className="col-span h-32 w-3/5 bg-primary place-self-center relative"></div>
-        <div className="col-span h-44 w-3/5 bg-white place-self-center">
+        <div className="relative col-span h-32 w-3/5 bg-primary place-self-center"></div>
+        <div className="relative col-span h-44 w-3/5 bg-white place-self-center">
           <div className="absolute pl-12 pt-20">
             <div className="font-bold">Morty Gamer</div>
             <div className="flex-row">
               <div className="flex gap-2 items-center">
-                <img src="images/build.png" alt="Ícone de curso" className="w-5 h-5" />
+                <img
+                  src="images/build.png"
+                  alt="Ícone de curso"
+                  className="w-5 h-5"
+                />
                 <div>Ciência da Computação</div>
                 <div>Dept. Ciência da Computação</div>
               </div>
               <div className="flex gap-2 items-center">
-                <img src="images/letter.png" alt="Ícone de e-mail de Morty Gamer" className="w-5 h-5" />
+                <img
+                  src="images/letter.png"
+                  alt="Ícone de e-mail de Morty Gamer"
+                  className="w-5 h-5"
+                />
                 Morty.gamer.23@cjr.org.br
               </div>
             </div>
@@ -107,40 +124,49 @@ const AlunoLogado = () => {
             <button
               type="button"
               className="border-2 bg-red-700 hover:border-red-700 hover:bg-white hover:text-red-700 font-bold rounded-lg text-gray-600 px-2 p-1"
+              onClick={() => console.log("Excluir Perfil clicado")}
             >
               Excluir Perfil
             </button>
           </div>
         </div>
         <div className="absolute rounded-full h-32 w-32 left-1/4 mt-16 border-2">
-          <img src="images/morty.png" alt="Foto de perfil de Morty Gamer" className="rounded-full" />
+          <img
+            src="images/morty.png"
+            alt="Foto de perfil de Morty Gamer"
+            className="rounded-full"
+          />
         </div>
 
         {/* Publicações */}
         <div className="bg-white w-3/5 place-self-center border-t border-black">
           <div className="mt-4 ml-2 mb-4 font-bold">Publicações</div>
           {posts.length > 0 ? (
-            posts.map((post, index) => (
-              <PostCard key={index} post={post} />
-            ))
+            posts.map((post, index) => <PostCard key={index} post={post} />)
           ) : (
             <div>Carregando publicações...</div>
           )}
         </div>
-      {/* Rodape */}
-      <footer className="mt-auto py-4 bg-green-100 text-center text-sm text-gray-600">
-        <p>&copy; 2024 CJR. Todos os direitos reservados.</p>
-        <p>
-          Desenvolvido por João Frango - Todos os posts são fictícios e criados para fins de demonstração.
-        </p>
-        <p>
-          Entre em contato:{' '}
-          <Link href="https://www.cjr.org.br" target="_blank" className="text-blue-500 underline">
-            www.cjr.org.br
-          </Link>
-        </p>
-      </footer>
 
+        {/* Rodapé */}
+        <footer className="mt-auto py-4 bg-green-100 text-center text-sm text-gray-600">
+          <p>&copy; 2024 CJR. Todos os direitos reservados.</p>
+          <p>
+            Desenvolvido por João Frango - Todos os posts são fictícios e
+            criados para fins de demonstração.
+          </p>
+          <p>
+            Entre em contato:{" "}
+            <Link
+              href="https://www.cjr.org.br"
+              target="_blank"
+              className="text-blue-500 underline"
+            >
+              www.cjr.org.br
+            </Link>
+          </p>
+        </footer>
+      </div>
       {isModalOpen && (
         <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
@@ -159,7 +185,11 @@ const AlunoLogado = () => {
                     className="rounded-full h-24 w-24"
                   />
                   <div className="absolute bottom-0 right-0 bg-white rounded-full p-1 cursor-pointer">
-                    <img src="images/camera-icon.png" alt="Editar Foto" className="h-6 w-6" />
+                    <img
+                      src="images/camera-icon.png"
+                      alt="Editar Foto"
+                      className="h-6 w-6"
+                    />
                   </div>
                 </div>
               </div>
@@ -212,6 +242,6 @@ const AlunoLogado = () => {
       )}
     </main>
   );
-}
+};
 
 export default AlunoLogado;

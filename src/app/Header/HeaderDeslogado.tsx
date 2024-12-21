@@ -9,7 +9,7 @@ const HeaderDeslogado = () => {
       router.push('/Cadastros/CadastroUsuario')
     };
     const Home = () => {
-        router.push('/FeedDeslogado')
+        router.push('/')
     };
     return (
         <header className='bg-green-100 flex flex-row'>

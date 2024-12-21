@@ -18,7 +18,7 @@ const getPosts = async () => {
 const PostCard = ({ post }) => (
   <div className="rounded-2xl h-auto bg-primary place-self-center gap-4 p-4 m-2 w-11/12">
     <div className="absolute rounded-full h-12 w-12 border-t">
-      <img src="images/morty.png" alt={`Foto de perfil de ${post.author}`} className="rounded-full" />
+      <img src="images/morty.png" alt={'Foto de perfil de ${post.author}'} className="rounded-full" />
     </div>
     <div className="pl-16">
       <div className="flex gap-4">
